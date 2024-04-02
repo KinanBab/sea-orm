@@ -261,7 +261,7 @@ impl<'r, D: Database> FromRequest<'r> for Connection<'r, D> {
     async fn from_request(req: &'r Request<'_>) -> Outcome<Self, Self::Error> {
         match D::fetch(req.rocket()) {
             Some(pool) => Outcome::Success(Connection(pool.borrow())),
-            None => Outcome::Error((Status::InternalServerError, None)),
+            None => Outcome::Failure((Status::InternalServerError, None)),
         }
     }
 }

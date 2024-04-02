@@ -13,7 +13,8 @@ edition = "2021"
 all-features = true
 
 [dependencies.rocket]
-version = "0.5.0"
+git = "https://github.com/KinanBab/Rocket.git"
+branch = "main"
 default-features = false
 
 [dependencies.sea-orm-rocket-codegen]
@@ -26,7 +27,8 @@ version = "0.5.1"
 # optional = true
 
 [dev-dependencies.rocket]
-version = "0.5.0"
+git = "https://github.com/KinanBab/Rocket.git"
+branch = "main"
 default-features = false
 features = ["json"]
 
